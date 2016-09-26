@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src= "js/main.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeatherApp</title>
+</head>
+<body>
+
+<div class="container">
+
+	<form class="form-inline">
+			<div class="form-group">
+			<input class="form-control searchbar" type="search" placeholder="Enter City" id="search_input" value="" />
+			<input class="btn btn-success button" type="button" id="search_btn" value="Search"/>
+
+			<div class="form-group">
+			<label for="metric_btn">
+			<input type="radio" id="metric_btn" class ="radio_btn" name="measurement" value="metric" checked="checked"/>
+			°C</label>
+			</div>
+
+			<div class="form-group">
+			<label for="imperial_btn">
+			<input type="radio" id="imperial_btn" class ="radio_btn" name="measurement" value="imperial"/>
+			<label for="imperial_btn">°F</label>
+			</div>
+
+</div>
+	</form>
+</div>
+
+</body>
+</html>
