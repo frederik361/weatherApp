@@ -1,11 +1,13 @@
 
-  var openWeatherAppId = '12b58fcff4ef1110f0376ca736304daa',
-    openWeatherUrl = 'http://api.openweathermap.org/data/2.5/weather'
+  var openWeatherAppId = '12b58fcff4ef1110f0376ca736304daa';
+  var  openWeatherUrl = 'http://api.openweathermap.org/data/2.5/weather';
+  var degrees = " °C";
+  var ws = " m\/sec";
 
   var prepareData = function(units) {
-    // Replace loading image
-    var cityName = $('#search_input').val()
-    // Make ajax call, callback
+
+    var cityName = $('#search_input').val();
+
     if (cityName && cityName != ''){
       cityName = cityName.trim()
       getData(openWeatherUrl, cityName, openWeatherAppId, units)
@@ -13,19 +15,24 @@
     else {
       alert('Please enter the city name')
     }
+
   }
   $(document).ready(function(){
+
+    var showSearch = function(){
+      if($('#metric_btn').is(':checked')) { prepareData('metric'); degrees = " °C"; ws = " m/sec"; }
+      else if($('#imperial_btn').is(':checked')) { prepareData('imperial'); degrees = " °F"; ws = " miles/h"; }
+    }
 
 
     $("#search_btn").click(function() {
 
-  if($('#metric_btn').is(':checked')) { prepareData('metric'); }
-  else if($('#imperial_btn').is(':checked')) { prepareData('imperial'); }
-
-    })
+      showSearch();
+    });
 
 
-  })
+  });
+
   function getData (url, cityName, appId, units) {
     var request = $.ajax({
       url: url,
@@ -38,12 +45,13 @@
       alert('Error sending request')
     })
   }
+
   function fetchData (weather) {
     console.log(weather);
 
-    $('.container').append('<h1 id="city_name">' + weather.name +', '+ weather.main.temp + ' °C'+'</h1>');
+    $('.container').append('<h1 id="city_name">' + weather.name +', '+ weather.main.temp +  degrees +'</h1>');
     $('.container').append('<h2 id="weather">' + weather.weather["0"].main +'</h2>');
-    $('.container').append('<h3 id="wind">'+'Wind: ' + weather.wind.speed +' m/sec'+'</h3>');
+    $('.container').append('<h3 id="wind">'+'Wind: ' + weather.wind.speed + ws +'</h3>');
     $('.container').append('<p id="icon_id">' + weather.weather["0"].icon +'</p>');
 
 
