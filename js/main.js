@@ -21,7 +21,7 @@
 
     var showSearch = function(){
       if($('#metric_btn').is(':checked')) { prepareData('metric'); degrees = " °C"; ws = " m/sec"; }
-      else if($('#imperial_btn').is(':checked')) { prepareData('imperial'); degrees = " °F"; ws = " miles/h"; }
+      else if($('#imperial_btn').is(':checked')) { prepareData('imperial'); degrees = " °F"; ws = " mphh"; }
     }
 
 
@@ -48,7 +48,6 @@
 
   function fetchData (weather) {
     console.log(weather);
-
     $('.container').append('<h1 id="city_name">' + weather.name +', '+ weather.main.temp +  degrees +'</h1>');
     $('.container').append('<h2 id="weather">' + weather.weather["0"].main +'</h2>');
     $('.container').append('<h3 id="wind">'+'Wind: ' + weather.wind.speed + ws +'</h3>');

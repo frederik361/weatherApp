@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css
+" media="screen" title="no title">
+
 <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src= "js/main.js"></script>
@@ -14,29 +16,24 @@
 
 <div class="container">
 
-	<form class="form-inline">
-			<div class="form-group">
 
-				<form class="searchform" action="index.html" method="post">
-				<input class="form-control searchbar" type="search" placeholder="Enter City" id="search_input" value="" />
-				</form>
-				
-				<input class="btn btn-success button" type="button" id="search_btn" value="Search"/>
+		<div class="searchbox">
 
-			<div class="form-group">
-			<label for="metric_btn">
-			<input type="radio" id="metric_btn" class ="radio_btn" name="measurement" value="metric" checked="checked"/>
-			°C</label>
-			</div>
 
-			<div class="form-group">
-			<label for="imperial_btn">
-			<input type="radio" id="imperial_btn" class ="radio_btn" name="measurement" value="imperial"/>
-			<label for="imperial_btn">°F</label>
-			</div>
+			<input class="" type="search" placeholder="Enter City" id="search_input" value=""/>
+			<input class="" type="button" id="search_btn" value=""/>
 
-</div>
-	</form>
+				<div class="radios">
+					<label for="metric_btn">
+					<input type="radio" id="metric_btn" class ="radio_btn" name="measurement" value="metric" checked="checked"/>°C</label>
+
+					<label for="imperial_btn">
+					<input type="radio" id="imperial_btn" class ="radio_btn" name="measurement" value="imperial"/>°F</label>
+				</div>
+		</div>
+
+
+
 </div>
 
 </body>
